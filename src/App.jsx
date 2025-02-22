@@ -1,8 +1,12 @@
+import TablaProductosFilrable from "./components/TablaProductosFilrable"
+import productos from "./constants/productos"
 
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <TablaProductosFilrable productos={productos} />
+    </div>
   )
 }
 
