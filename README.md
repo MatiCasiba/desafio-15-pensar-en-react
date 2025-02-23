@@ -256,4 +256,65 @@ export default BarraBuscadora
 ```
 * También cuando el usuario haga click en el buscador, habrá un focus, que cambiará el color de fondo a un tono poco oscuro, y los bordés no tendrán tanta esquinas puntiagudas.
 
+### Diseño de la tabla de productos
+En la tabla habrá un espacio en el margin de arriba, para separarce de la barra del buscador, el encabezado (thead) tendrá tamaño de texto y un borde debajo
+
+```sh
+import FilaCategoriasProductos from "./FilaCategoriasProductos"
+import FilaProductos from "./FilaProductos"
+
+const TablaProductos = ({ productos, textoFiltrado, soloEnStock }) => {
+  ...
+
+  return (
+    <table className="my-5">
+      <thead className="text-2xl border-b-2">
+        <tr>
+          <th className="text-start">Nombre</th>
+          <th className="text-start">Precio</th>
+          #el tecto comenzarán desde inicio en su espacio correspondiente (estará a la izquierda)
+        </tr>
+      </thead>
+      <tbody>{filas}</tbody>
+    </table>
+  )
+}
+
+export default TablaProductos
+```
+
+### Diseño de las filas de productos
+Notarás que los nombres de los productos, el texto es un poco más grueso a diferencia de los números de los precios, pero ambos tendrán en mismo tamaño con el text-lg:
+```sh
+
+const FilaProductos = ({producto}) => {
+  ...
+  return (
+    <tr className=" text-lg ">
+        <td className="font-semibold">{nombre}</td>
+        <td>{producto.precio}</td>
+    </tr>
+  )
+}
+
+export default FilaProductos
+```
+
+### Diseño en la categoría
+El texto de las categorías tendrán un tamaño más grande a diferencia de los nombres de los productos y sus precios
+
+```sh
+
+const FilaCategoriasProductos = ({categoria}) => {
+  return (
+    <tr>
+        <th className="text-2xl" colSpan="2">
+            {categoria}
+        </th>
+    </tr>
+  )
+}
+
+export default FilaCategoriasProductos
+```
 

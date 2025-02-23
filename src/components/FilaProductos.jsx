@@ -5,8 +5,8 @@ const FilaProductos = ({producto}) => {
         {producto.nombre}
     </span>
   return (
-    <tr>
-        <td>{nombre}</td>
+    <tr className=" text-lg ">
+        <td className="font-semibold">{nombre}</td>
         <td>{producto.precio}</td>
     </tr>
   )
