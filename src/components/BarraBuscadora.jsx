@@ -1,14 +1,15 @@
 
 const BarraBuscadora = ({textoFiltrado, soloEnStock, filtroCambioTexto, soloEnStockCambio}) => {
   return (
-    <form>
+    <form className=" flex justify-between items-center border-b">
         <input 
             type="text" 
             value={textoFiltrado}
-            placeholder='Buscar productos... ' 
+            placeholder='Buscar productos... '
+            className="mb-3 text-2xl p-2 rounded-lg focus:outline-none focus:bg-gray-100" 
             onChange={(e)=> filtroCambioTexto(e.target.value)}
         />
-        <label htmlFor="stock">
+        <label htmlFor="stock" className="text-lg font-black">
             <input 
                 id='stock' 
                 type="checkbox"
@@ -16,10 +17,10 @@ const BarraBuscadora = ({textoFiltrado, soloEnStock, filtroCambioTexto, soloEnSt
                 onChange={(e)=> soloEnStockCambio(e.target.checked)}
             />
             {' '}
-            Mostrar solo productos en stock
+            En stock
         </label>
     </form>
   )
 }
 
-export default BarraBuscadora
+export default BarraBuscadora 

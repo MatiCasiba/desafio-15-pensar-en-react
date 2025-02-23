@@ -1,5 +1,5 @@
 * Nombre: Matias Casiba
-* Link GitHub Repo:
+* Link GitHub Repo: https://github.com/MatiCasiba/desafio-15-pensar-en-react
 * Link Netlify: 
 
 # Desafio 15
@@ -214,3 +214,46 @@ const App = () => {
 
 export default App
  ```
+
+ ## Diseño de la lista
+ Al momento de dar diseño a esta lista, estaré trabajando con tailwind
+
+ ### Diseño del contenedor en App.jsx
+Le estaré dando un máximo de ancho, con la finalidad de no hacer tan extenso el ancho de la lista, tendrá sombra, será centrado con un el margin-auto, tendrá un espacio en el margen de arriba y le daré un borde:
+```sh
+const App = () => {
+  return (
+    <div className="max-w-4xl m-auto my-5 border p-4 rounded-2xl shadow-2xl">
+      ...
+    </div>
+  )
+}
+```
+
+### Diseño de la barra buscadora
+La el buscador de la barra tendrá un space-between (hará que los itemes que contiene, uno se encuentre al principio y el otro al final, dejando un espacio entre ellos), items-center (que sería el align-items: center) sirve para centrar verticalmente los hijos del contenedor, y tendrá un borde debajo
+
+```sh
+const BarraBuscadora = ({...}) => {
+  return (
+    <form className=" flex justify-between items-center border-b">
+        <input 
+            ...
+            className="mb-3 text-2xl p-2 rounded-lg focus:outline-none focus:bg-gray-100" 
+            ...
+        />
+        <label htmlFor="stock" className="text-lg font-black"> # tamaño del texto y el grosor
+            <input 
+                ...
+            />
+            ...
+        </label>
+    </form>
+  )
+}
+
+export default BarraBuscadora 
+```
+* También cuando el usuario haga click en el buscador, habrá un focus, que cambiará el color de fondo a un tono poco oscuro, y los bordés no tendrán tanta esquinas puntiagudas.
+
+
