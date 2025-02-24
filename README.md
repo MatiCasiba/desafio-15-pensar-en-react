@@ -318,3 +318,70 @@ const FilaCategoriasProductos = ({categoria}) => {
 export default FilaCategoriasProductos
 ```
 
+### Acomodando los nombres y precios
+Antes los nombres de los productos, como algunos eran largos, seguían en la misma línea hasta encontrarse con el precio y bajaba el texto, no quedaba muy bueno que digamos, entonces le asigné un ancho máximo a los nombres, para generar bastante espacio entre los nombres de los productos y sus precios. Tales cambios hacía que el precio se corra hacia la izquierda, también me ocupe de que el precio se mantenga en el lado derecho:
+```sh
+# TablaProductos.jsx
+import FilaCategoriasProductos from "./FilaCategoriasProductos"
+import FilaProductos from "./FilaProductos"
+
+const TablaProductos = ({ productos, textoFiltrado, soloEnStock }) => {
+  ...
+
+  return (
+    <table className=" table-fixed w-full my-5">
+      <thead className="text-2xl border-b-2">
+        <tr>
+          <th className="text-start">Nombre</th>
+          <th className="text-end">Precio</th>
+        </tr>
+      </thead>
+      <tbody>{filas}</tbody>
+    </table>
+  )
+}
+
+export default TablaProductos
+```
+* table-fixed -> va a mantener la estructura fija de la tabla
+
+```sh
+# FilaProductos.jsx
+
+const FilaProductos = ({producto}) => {
+  ...
+  return (
+    <tr className="text-lg align-top">
+        <td className="font-semibold w-72 whitespace-normal">{nombre}</td>
+        <td className="text-right w-auto">{producto.precio}</td>
+    </tr>
+  )
+}
+
+export default FilaProductos
+```
+* w-72 whitespace-normal -> fijo el ancho del nombre en 300px y me permite hacer saltos de linea
+* text-right w-auto -> hago que la columna de precios se expanda hasta el borde derecho de la tabla
+
+### Espacio en categoria
+En el texto de la categría, se encontraba muy pegado a los productos, para separarlos un poco, le agregué un padding vertical
+```sh
+
+const FilaCategoriasProductos = ({categoria}) => {
+  return (
+    <tr>
+        <th className="text-2xl py-5 tracking-wider" colSpan="2">
+            {categoria}
+        </th>
+    </tr>
+  )
+}
+
+export default FilaCategoriasProductos
+```
+* py-5 -> me da los espacios tanto arriba como debajo
+* taccking-wider -> genero espacios entre las letras del texto
+
+
+
+

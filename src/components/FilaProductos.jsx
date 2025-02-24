@@ -5,9 +5,9 @@ const FilaProductos = ({producto}) => {
         {producto.nombre}
     </span>
   return (
-    <tr className=" text-lg ">
-        <td className="font-semibold">{nombre}</td>
-        <td>{producto.precio}</td>
+    <tr className="text-lg align-top">
+        <td className="font-semibold w-72 whitespace-normal">{nombre}</td>
+        <td className="text-right w-auto">{producto.precio}</td>
     </tr>
   )
 }

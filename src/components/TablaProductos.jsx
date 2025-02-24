@@ -30,11 +30,11 @@ const TablaProductos = ({ productos, textoFiltrado, soloEnStock }) => {
   })
 
   return (
-    <table className="my-5">
+    <table className=" table-fixed w-full my-5">
       <thead className="text-2xl border-b-2">
         <tr>
           <th className="text-start">Nombre</th>
-          <th className="text-start">Precio</th>
+          <th className="text-end">Precio</th>
         </tr>
       </thead>
       <tbody>{filas}</tbody>
