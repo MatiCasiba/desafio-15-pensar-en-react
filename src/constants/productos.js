@@ -12,9 +12,9 @@ const productos = [
     { categoria: 'Almacenamiento', precio: "$ 34.999", stocked: true, nombre: 'Disco Sólido Hiksemi Hs-ssd-wave(s) 480g Color Negro'},
     { categoria: 'Almacenamiento', precio: "$ 59.999", stocked: true, nombre: 'Disco Sólido Ssd Crucial M.2 500gb P3 Plus Nvme Gen4 4700mbs Color Negro'},
     { categoria: 'Almacenamiento', precio: "$ 22.499", stocked: true, nombre: 'Hiksemi Disco Ssd M.2 Ngff 256gb Wave Hs-ssd-wave Ppct '},
-    { categoria: 'Almacenamiento', precio: "73.999", stocked: true, nombre: 'Disco Duro Wstern Digital Wd10ezerx 1tb'},
-    { categoria: 'Almacenamiento', precio: "134.900", stocked: false, nombre: 'Ssd Externo Kignston Xs1000 1tb Rojo Usb 3.2 Gen 2'},
-    { categoria: 'Almacenamiento', precio: "32.999", stocked: true, nombre: 'Ssd M.2 250gb Western Digital Nvme 2280 Pcie Gen3 2400mb/s Color Verde'},
+    { categoria: 'Almacenamiento', precio: "$ 73.999", stocked: true, nombre: 'Disco Duro Wstern Digital Wd10ezerx 1tb'},
+    { categoria: 'Almacenamiento', precio: "$ 134.900", stocked: false, nombre: 'Ssd Externo Kignston Xs1000 1tb Rojo Usb 3.2 Gen 2'},
+    { categoria: 'Almacenamiento', precio: "$ 32.999", stocked: true, nombre: 'Ssd M.2 250gb Western Digital Nvme 2280 Pcie Gen3 2400mb/s Color Verde'},
 
     { categoria: 'Placas de Video', precio: "$ 521.130", stocked: true, nombre: 'Placa de video Nvidia MSI Ventus GeForce RTX 30 Series RTX 3060 VENTUS 2X 12G OC OC Edition 12GB Gddr6'},
     { categoria: 'Placas de Video', precio: "$ 114.799", stocked: false, nombre: 'Placa Video Sentey Radeon Rx 560 4gb Ddr5 Hdmi'},
