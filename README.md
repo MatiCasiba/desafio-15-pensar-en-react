@@ -382,6 +382,10 @@ export default FilaCategoriasProductos
 * py-5 -> me da los espacios tanto arriba como debajo
 * taccking-wider -> genero espacios entre las letras del texto
 
-
+### Espacio entre los productos
+Antes todos los productos se encontraban pegados (cercas), para poder direfenciarlos bien y que no se encuentren tan pegado estos texto, le dí espacio a los nombres del producto. Esta modificación la encontrarás en el componente FilaProductos.jsx
+```sh
+<td className="py-3">{nombre}</td>
+```
 
 

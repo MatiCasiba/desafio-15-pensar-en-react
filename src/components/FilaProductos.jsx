@@ -6,7 +6,7 @@ const FilaProductos = ({producto}) => {
     </span>
   return (
     <tr className="text-lg align-top">
-        <td className="font-semibold w-72 whitespace-normal">{nombre}</td>
+        <td className="font-semibold w-72 whitespace-normal py-3">{nombre}</td>
         <td className="text-right w-auto">{producto.precio}</td>
     </tr>
   )
