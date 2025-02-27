@@ -388,4 +388,45 @@ Antes todos los productos se encontraban pegados (cercas), para poder direfencia
 <td className="py-3">{nombre}</td>
 ```
 
+## Conteo de productos
+A la tabla le agregaré un conteo de productos disponibles, con lo que el usuario escriba, este se encrgará de mostrar la cantidad de productos que hay con lo que haya ingresado la persona (ejemplo: la persona ingresa pc y se mostrará "Productos disponible: 11"). Esta función se va a encontrar en el componente TablaProductosFilrable.jsx:
+
+```sh
+import { useState } from "react"
+import BarraBuscadora from "./BarraBuscadora"
+import TablaProductos from "./TablaProductos"
+
+const TablaProductosFilrable = ({productos}) => {
+  const [textoFiltrado, setTextoFiltrado] = useState('')
+  const [soloEnStock, setSoloEnStock] = useState(false)
+
+  const productosFiltrados = productos.filter(producto => {
+    const coincideTexto = producto.nombre.toLowerCase().includes(textoFiltrado.toLocaleLowerCase())
+    const coincideStock = !soloEnStock || producto.stocked
+    return coincideTexto && coincideStock # -> solo los productos que cumplen con las dos condiciones, se van a mantener en productosFiltrados
+  })
+
+  return (
+    <div>
+        <BarraBuscadora
+            ...
+        />
+
+        <p className="text-lg text-gray-400 font-semibold my-2">Productos disponibles: {productosFiltrados.length}</p>
+        
+
+        <TablaProductos 
+            ...
+        />
+    </div>
+  )
+}
+
+export default TablaProductosFilrable
+```
+Lo que hace cada código:
+* productos.filter() va a generar un nuevo array con solo los productos que coinciden con los filtros
+* coinideTexto -> este verifica si el nombre del producto incluye el texto que se busca
+* coincideStock -> me permite incluir los productos en stock si la casilla está activada
+* productosFiltados.length -> va a contar cuántos productos pasaron el filtro y muestra ese número en pantalla
 

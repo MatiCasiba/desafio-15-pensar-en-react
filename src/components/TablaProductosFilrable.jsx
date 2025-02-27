@@ -6,6 +6,12 @@ const TablaProductosFilrable = ({productos}) => {
   const [textoFiltrado, setTextoFiltrado] = useState('')
   const [soloEnStock, setSoloEnStock] = useState(false)
 
+  const productosFiltrados = productos.filter(producto => {
+    const coincideTexto = producto.nombre.toLowerCase().includes(textoFiltrado.toLocaleLowerCase())
+    const coincideStock = !soloEnStock || producto.stocked
+    return coincideTexto && coincideStock
+  })
+
   return (
     <div>
         <BarraBuscadora
@@ -15,6 +21,7 @@ const TablaProductosFilrable = ({productos}) => {
             soloEnStockCambio={setSoloEnStock}
 
         />
+        <p className="text-lg text-gray-400 font-semibold my-2">Productos disponibles: {productosFiltrados.length}</p>
         <TablaProductos 
             productos={productos}
             textoFiltrado={textoFiltrado}
