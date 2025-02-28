@@ -22,11 +22,15 @@ const TablaProductosFilrable = ({productos}) => {
 
         />
         <p className="text-lg text-gray-400 font-semibold my-2">Productos disponibles: {productosFiltrados.length}</p>
-        <TablaProductos 
+        {productosFiltrados.length > 0 ? (
+          <TablaProductos 
             productos={productos}
             textoFiltrado={textoFiltrado}
             soloEnStock={soloEnStock} 
-        />
+          />
+        ) : (
+          <p className="text-center text-red-500 text-xl mt-5">No encontrado</p>
+        )}
     </div>
   )
 }

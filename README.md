@@ -1,6 +1,6 @@
 * Nombre: Matias Casiba
 * Link GitHub Repo: https://github.com/MatiCasiba/desafio-15-pensar-en-react
-* Link Netlify: 
+* Link Netlify: https://desafio-15-lista-productos.netlify.app/
 
 # Desafio 15
  
@@ -430,3 +430,36 @@ Lo que hace cada código:
 * coincideStock -> me permite incluir los productos en stock si la casilla está activada
 * productosFiltados.length -> va a contar cuántos productos pasaron el filtro y muestra ese número en pantalla
 
+## No se encuentra el producto
+En esta tabla, se mostrará un mensaje cuando el producto no es encontrado. Este bloque de código lo tengo hecho en el componente TablaProductosFilrable.jsx:
+```sh
+import { useState } from "react"
+import BarraBuscadora from "./BarraBuscadora"
+import TablaProductos from "./TablaProductos"
+
+const TablaProductosFilrable = ({productos}) => {
+  ...
+
+  return (
+    <div>
+        <BarraBuscadora
+            ...
+        />
+        <p className="text-lg text-gray-400 font-semibold my-2">Productos disponibles: {productosFiltrados.length}</p>
+        {productosFiltrados.length > 0 ? (
+          <TablaProductos 
+            productos={productos}
+            textoFiltrado={textoFiltrado}
+            soloEnStock={soloEnStock} 
+          />
+        ) : (
+          <p className="text-center text-red-500 text-xl mt-5">No encontrado</p>
+        )}
+    </div>
+  )
+}
+
+export default TablaProductosFilrable
+```
+* El texto será de color rojo, estará centrado, tendrá un tamaño asignado y espacio en el margen de arriba
+* productosFiltrados.length > 0 -> si la lista tiene uno o más productos, la tabla se muestra, sino se muestra el mensaje "No encontrado"
